@@ -9,6 +9,7 @@ final suggestionFutureProvider =
     FutureProvider.autoDispose<Suggestion>((ref) async {
   //* we are keep watching the apiServiceProvider inside futureProvider; if any changes happen in the apiServiceProvider
   //* then the suggetion method is called completely again
+
   final apiService = ref.watch(apiServiceProvider);
   return await apiService.getSuggestion();
 });

@@ -15,11 +15,17 @@
 
     1. Provider:
      - This is Read Only, we can't change its value.
-    2. StateProvider
+    2. StateProvider:
+        - This is almost like Provider, but gives us more freedom and ability to change.
     3. FutureProvider
+        - This is used to fetch data from the server / API call.
     4. StreamProvider
+        - This is used fot continous data fetching like clock data which is continous in entire time.
     5. ChnageNotifierProvider [mutable]
+        - This is highly discouraged to use in riverpod official doc. (doc link: https://riverpod.dev/docs/concepts/state_notifier)
     6. StateNotifierProvider [immutable]
+        - instead of using ChangeNotifierProvider, we can use StateNotifierProvider.
+        - still we can change the state, but in a immutable way.
     7. AsyncNotifierProvider [Riverpod 2.0]
     8. NotifierProvider [Riverpod 2.0]
 

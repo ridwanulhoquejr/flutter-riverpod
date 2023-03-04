@@ -2,7 +2,9 @@
 import 'package:flutter/material.dart';
 import 'package:riverpod_tutorial/pages/future_provider.dart';
 import 'package:riverpod_tutorial/pages/provider_page.dart';
+import 'package:riverpod_tutorial/pages/state_notifier_provider_page.dart';
 import 'package:riverpod_tutorial/pages/state_provider_page.dart';
+import 'package:riverpod_tutorial/pages/stream_provider.dart';
 import 'counter_page.dart';
 
 class MyHomePage extends StatelessWidget {
@@ -111,8 +113,16 @@ class RiverpodProviders extends StatelessWidget {
                   builder: (context) => const FutureProviderPage()));
               break;
             case 3:
-              Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => const CounterPage()));
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const StreamProviderPage()));
+              break;
+            case 4:
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const StreamProviderPage()));
+              break;
+            case 5:
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const StateNotifierProviderPage()));
               break;
 
             default:
