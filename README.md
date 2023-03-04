@@ -1,42 +1,41 @@
-# Riverpod - State Management
+# Riverpod: A tour of Riverpod
 
 ---
 
-## Riverpod has two types of things:
+## Riverpod consists of two things:
 
-1. _Provider_
-2. _Consumer_
+- **_Provider_**
+- **_Consumer_**
 
 ### Provider
 
-`Provider` is use to provide the data to the `Consumer` widget. Means, `Provider` will provide the data to the `Consumer` widget and `Consumer` will consume the data from the `Provider` widget. So that, we can show the data in the UI.
+`Provider` is used to provide/supply the data to the `Consumer` widget. So that, we can show the data in the UI.
 
-#### Provider has also two main types:
+#### Different types of Provider:
 
-1. Hold the data
-
-   - ChnageNotifierProvider [mutable]
-   - StateNotifierProvider [immutable]
-   - AsyncNotifierProvider [Riverpod 2.0]
-   - NotifierProvider [Riverpod 2.0]
-
-2. Provide the data
-
-   - Provider
-     - This is Read Only, we can't change its value
-   - StateProvider
-   - FutureProvider
-   - StreamProvider
+    1. Provider:
+     - This is Read Only, we can't change its value.
+    2. StateProvider
+    3. FutureProvider
+    4. StreamProvider
+    5. ChnageNotifierProvider [mutable]
+    6. StateNotifierProvider [immutable]
+    7. AsyncNotifierProvider [Riverpod 2.0]
+    8. NotifierProvider [Riverpod 2.0]
 
 ### Consumer
 
 - Consumer will watch/monitoring the provided data and eventually rebuild the whole widget tree/consumed widget only; if any data (i.e. state) is changed.
 
-## Creating and Reading a Provider
+---
+
+---
+
+## Creating a Riverpod Provider
 
 _a simple provider which returns a string value_
 
-`final stringProvider = Provider<String>((ref) => 'Hello World');`
+`final stringProvider = Provider<int>((ref) => 10);`
 
 This is made of three things:
 
