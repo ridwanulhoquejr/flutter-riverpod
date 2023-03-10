@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-//! There are loyts of notifiers to
-class ProviderCounter extends ChangeNotifier {
+class ChangeNotifierProviderCounter extends ChangeNotifier {
   //* Private variable to store the counter value
   int _counter = 0;
 
@@ -25,13 +23,5 @@ class ProviderCounter extends ChangeNotifier {
   void resetCounter() {
     _counter = 0;
     notifyListeners();
-  }
-}
-
-class CounterStateNitifier extends StateNotifier<int> {
-  CounterStateNitifier(super.state);
-
-  void incrementCounter() {
-    state++;
   }
 }

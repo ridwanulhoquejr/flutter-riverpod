@@ -40,10 +40,8 @@ class StateNotifierProviderPage extends ConsumerWidget {
                       ),
                       actions: [
                         TextButton(
-                          onPressed: () {
-                            // Clear the cart
-                            ref.read(cartNotifierProvider.notifier).clearCart();
-                          },
+                          onPressed:
+                              ref.read(cartNotifierProvider.notifier).clearCart,
                           child: const Text('Clear'),
                         ),
                       ],

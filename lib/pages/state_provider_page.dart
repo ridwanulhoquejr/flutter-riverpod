@@ -24,7 +24,7 @@ class StateProviderPage extends ConsumerWidget {
      * which is implemented in below
      */
 
-    //? we can conditionally perform some operation based on Previous and Curret satte by using ref.listen
+    //? we can conditionally perform some operation based on Previous and Current satte by using ref.listen
     //* for example:
     ref.listen<int>(counterWithStateProvider, (pre, curr) {
       if (curr == 10) {
@@ -46,7 +46,7 @@ class StateProviderPage extends ConsumerWidget {
             Consumer(
               builder: (BuildContext context, WidgetRef ref, Widget? child) {
                 //* Now, widget tree will not be rebuild bcz we are watching the value in the Consumer
-                //* So only this Consumer Widget is rebuilding
+                //* So only this Consumer Widget i:e Text Widget will rebuild
                 final counter = ref.watch(counterWithStateProvider);
                 return Text(
                   ' The value is: $counter',

@@ -1,11 +1,11 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:riverpod_tutorial/pages/change_notifier_page.dart';
 import 'package:riverpod_tutorial/pages/future_provider.dart';
 import 'package:riverpod_tutorial/pages/provider_page.dart';
 import 'package:riverpod_tutorial/pages/state_notifier_provider_page.dart';
 import 'package:riverpod_tutorial/pages/state_provider_page.dart';
 import 'package:riverpod_tutorial/pages/stream_provider.dart';
-import 'counter_page.dart';
 
 class MyHomePage extends StatelessWidget {
   MyHomePage({super.key});
@@ -118,7 +118,7 @@ class RiverpodProviders extends StatelessWidget {
               break;
             case 4:
               Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => const StreamProviderPage()));
+                  builder: (context) => const ChangeNotifierPage()));
               break;
             case 5:
               Navigator.of(context).push(MaterialPageRoute(
