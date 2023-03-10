@@ -66,6 +66,17 @@ Once Riverpod is installed, we have to wrap our root widget with a ProviderScope
     7. AsyncNotifierProvider [New in Riverpod 2.0]
     8. NotifierProvider [New in Riverpod 2.0]
 
+### Difference between `Provider`, `StateProvider`, `ChnageNotifierProvider` and `StateNotifierProvider`
+
+This Differences are confusing at least for me when i explore those providers in first time. So, i will try to explain what i understood so far.
+
+#### First thing first, the main difference is the `return type`
+
+- `Provider` and `StateProvider` returns a simple dart data type (int, double, bool, String, List,...)
+
+- Whereas, `ChnageNotifierProvider` and `StateNotifierProvider` returns a `class` and the cluss which returned must have to extend `ChnageNotifier`, `StateNotifier` respectively.
+- So in order to use the `Provider` and `StateProvider`, we dont have to write any class. But for the last two, you must have to write and extends.
+
 ### Consumer
 
 `Consumer` will watch/monitoring the provided data and eventually rebuild the whole widget tree/consumed widget only; if any data (i.e. state) is changed.

@@ -3,12 +3,12 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../model/suggestion.dart';
 import '../services/api_service.dart';
 
-//* Future Provider Declaration
+// Future Provider Declaration
 final suggestionFutureProvider =
     FutureProvider.autoDispose<Suggestion>((ref) async {
   //
-  //* we are keep watching the apiServiceProvider inside futureProvider; if any changes happen in the apiServiceProvider
-  //* then the suggetion method is called completely again
+  // we are keep watching the apiServiceProvider inside futureProvider; if any changes happen in the apiServiceProvider
+  // then the suggetion method is called completely again
 
   final apiService = ref.watch(apiServiceProvider);
   return await apiService.getSuggestion();
