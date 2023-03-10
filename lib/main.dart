@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'pages/home_page.dart';
+import 'home_page.dart';
 
 void main() {
   runApp(
+    //* wrap the entire app with a ProviderScope so that widgets
+    //* will be able to read providers
+
     const ProviderScope(
       child: MyApp(),
     ),

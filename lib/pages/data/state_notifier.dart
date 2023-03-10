@@ -1,7 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../model/product.dart';
 
-//* StateNotifierProvider initilizes which emmits the CartNotifier class
+// StateNotifierProvider initilizes which emmits the CartNotifier class
+
 final cartNotifierProvider = StateNotifierProvider<CartNotifier, List<Product>>(
   (ref) => CartNotifier(),
 );
@@ -11,13 +12,40 @@ class CartNotifier extends StateNotifier<List<Product>> {
 
   void addProduct(Product item) {
     /* 
-    * here we are adding the item to the state in a immutable way [... is a cascading operator]
-    * first we look through the existing list and then adding the (Product item) to the list
+     here we are adding the item to the state in a immutable way [... is a spread operator]
+     first we look through the existing list and then adding the (Product item) to the list
     */
-    state = [...state, item];
+    state = [
+      ...state,
+      item
+    ]; // previous state + current state (which is an item)
   }
 
   void clearCart() {
     state = [];
+  }
+}
+
+//* Example 2
+// Counter with StateNotifierProvider
+
+final counterStateNotifierProvider =
+    StateNotifierProvider<CounterWithStateNotifier, int>(
+  (ref) => CounterWithStateNotifier(0),
+);
+
+class CounterWithStateNotifier extends StateNotifier<int> {
+  CounterWithStateNotifier(super.state);
+
+  void increment() {
+    state++;
+  }
+
+  void decrement() {
+    state--;
+  }
+
+  void resetCounter() {
+    state = 0;
   }
 }

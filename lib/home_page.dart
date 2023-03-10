@@ -93,8 +93,8 @@ class RiverpodProviders extends StatelessWidget {
         ),
         child: Text(providerName!),
         onPressed: () {
-          //* there will be a switch case here
-          //* to navigate to the correct page
+          // there will be a switch case here
+          // to navigate to the correct page
 
           switch (index) {
             case 0:
