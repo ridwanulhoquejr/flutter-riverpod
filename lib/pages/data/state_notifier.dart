@@ -31,7 +31,8 @@ class CartNotifier extends StateNotifier<List<Product>> {
 
 final counterStateNotifierProvider =
     StateNotifierProvider<CounterWithStateNotifier, int>(
-  (ref) => CounterWithStateNotifier(0),
+  (ref) => CounterWithStateNotifier(
+      0), // we pass the initial value through constructor
 );
 
 class CounterWithStateNotifier extends StateNotifier<int> {

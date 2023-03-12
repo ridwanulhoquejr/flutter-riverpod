@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-//* Provider Declaration
-final counterWithStateProvider = StateProvider<int>((ref) => 0);
+// Provider Declaration
+// final counterWithProvider = Provider<int>((ref) => 10);
+
+// State Provider Declaration
+final counterWithStateProvider = StateProvider<int>((ref) => 10);
 
 //* if we want to automatically dispose the state of a Provider when we are routing / pop the page
 //* we have to declare the provider with autoDispose

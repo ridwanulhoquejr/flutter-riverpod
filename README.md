@@ -1,4 +1,4 @@
-# Riverpod: A tour of Flutter state management
+# Riverpod: A tour of `Flutter` state management
 
 ---
 
@@ -66,16 +66,30 @@ Once Riverpod is installed, we have to wrap our root widget with a ProviderScope
     7. AsyncNotifierProvider [New in Riverpod 2.0]
     8. NotifierProvider [New in Riverpod 2.0]
 
-### Difference between `Provider`, `StateProvider`, `ChnageNotifierProvider` and `StateNotifierProvider`
+### Differences between `Provider`, `StateProvider`, `ChnageNotifierProvider` and `StateNotifierProvider`
 
 This Differences are confusing at least for me when i explore those providers in first time. So, i will try to explain what i understood so far.
 
-#### First thing first, the main difference is the `return type`
+#### The main difference is the `return type`
 
 - `Provider` and `StateProvider` returns a simple dart data type (int, double, bool, String, List,...)
 
 - Whereas, `ChnageNotifierProvider` and `StateNotifierProvider` returns a `class` and the cluss which returned must have to extend `ChnageNotifier`, `StateNotifier` respectively.
-- So in order to use the `Provider` and `StateProvider`, we dont have to write any class. But for the last two, you must have to write and extends.
+- So in order to use the `Provider` and `StateProvider`, we dont have to write any class. But for the `ChnageNotifierProvider` and `StateNotifierProvider`, you must have to write and extends.
+
+### For example:
+
+- `Provider` and `StateProvider` declaration:
+
+![image](https://user-images.githubusercontent.com/52696988/224529733-06c56d48-7344-4189-861b-0e6692c378db.png)
+
+- `ChangeNotifierProvider` declation and its return class:
+  ![image](https://user-images.githubusercontent.com/52696988/224529890-78e69de2-3aad-4695-9b95-63a9d0ad4105.png)
+
+- `StateNotifierProvider` declation and its return class:
+  ![image](https://user-images.githubusercontent.com/52696988/224530034-65453d3a-e2ff-4997-8adf-35409ef4e63a.png)
+
+- if we look carefully in above two examples we could see that, in `StateNotifierProvider` we don't have to to call `notifyListener()` everytime we chnage the state. This is the beauty of `StateNotifierProvider`.
 
 ### Consumer
 
@@ -104,3 +118,15 @@ Unlike, **Riverpod providers** live outside the widget tree and to read them we 
 **long story short:** if we have a `ref` object we can access any riverpod provider throughout our apps.
 
 ![provider_consumer](https://user-images.githubusercontent.com/52696988/223823001-220f862f-4f9c-49f2-8812-69ad7146a07d.jpg)
+
+<!-- ## Once we have a provider, how do we use it inside a widget?
+
+All Flutter widgets have a **BuildContext** object that we can use to access things inside the widget tree (such as Theme.of(context)).
+
+But **Riverpod providers live outside the widget tree** and to read them we need an additional ref object. Here are three different ways of obtaining it.
+
+1. Using the ==ConsumerWidget==
+
+   - Instead of extanding the `StateLessWidget`, we have to extends the `ConsumerWidget`.
+   - It will gives us an extra parameter `WidgetRef ref` to recieve inside `build` method declaration.
+   - So, now our build method will look like this: `Widget build(BuildContext context, WidgetRef ref)` -->
