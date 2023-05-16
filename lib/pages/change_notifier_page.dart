@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'data/chnage_notifier_provider.dart';
+import '../application/states/chnage_notifier_provider.dart';
 
 final changeNotifierProvider =
     ChangeNotifierProvider.autoDispose<ChangeNotifierProviderCounter>(

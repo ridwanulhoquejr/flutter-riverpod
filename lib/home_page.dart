@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:riverpod_tutorial/pages/change_notifier_page.dart';
 import 'package:riverpod_tutorial/pages/future_provider.dart';
+import 'package:riverpod_tutorial/pages/notifier_provider_page.dart';
 import 'package:riverpod_tutorial/pages/provider_page.dart';
 import 'package:riverpod_tutorial/pages/state_notifier_provider_page.dart';
 import 'package:riverpod_tutorial/pages/state_provider_page.dart';
@@ -27,10 +28,10 @@ class MyHomePage extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Riverpod Tutorial'),
         ),
-        body: Center(
+        body: const Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
-            children: const [
+            children: [
               SizedBox(height: 10),
               RiverpodProviders(
                 providerName: 'Provider',
@@ -65,6 +66,11 @@ class MyHomePage extends StatelessWidget {
                 providerName: 'State Notifier Provider',
                 color: Colors.amber,
                 index: 5,
+              ),
+              RiverpodProviders(
+                providerName: 'Notifier Provider',
+                color: Colors.blue,
+                index: 6,
               ),
             ],
           ),
@@ -123,6 +129,10 @@ class RiverpodProviders extends StatelessWidget {
             case 5:
               Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => const StateNotifierProviderPage()));
+              break;
+            case 6:
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const NotifierProviderPage()));
               break;
 
             default:
