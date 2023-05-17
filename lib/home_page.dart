@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:riverpod_tutorial/pages/change_notifier_page.dart';
 import 'package:riverpod_tutorial/pages/future_provider.dart';
 import 'package:riverpod_tutorial/pages/notifier_provider_page.dart';
+import 'package:riverpod_tutorial/pages/post_from_api.dart';
 import 'package:riverpod_tutorial/pages/provider_page.dart';
 import 'package:riverpod_tutorial/pages/state_notifier_provider_page.dart';
 import 'package:riverpod_tutorial/pages/state_provider_page.dart';
@@ -72,6 +73,11 @@ class MyHomePage extends StatelessWidget {
                 color: Colors.blue,
                 index: 6,
               ),
+              RiverpodProviders(
+                providerName: 'Post From API',
+                color: Colors.greenAccent,
+                index: 7,
+              ),
             ],
           ),
         ));
@@ -133,6 +139,10 @@ class RiverpodProviders extends StatelessWidget {
             case 6:
               Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => const NotifierProviderPage()));
+              break;
+            case 7:
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => const PostFromAPI()));
               break;
 
             default:
